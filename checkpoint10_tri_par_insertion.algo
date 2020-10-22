@@ -1,0 +1,16 @@
+ALGORITHM tri_par_insertion
+VAR
+    i,j,val:INTEGER;
+    tab : ARRAY_OF INTEGER[50];
+BEGIN
+    tab:={2,3,7,1,4,9,8}
+    FOR i FROM 1 TO tab.length-1  DO
+        val:=tab[i];
+        j:=i-1;
+        WHILE (j>=0 AND tab[j]>val) DO
+            tab[j+1]:=tab[j];
+            j:=j-1;
+        END_WHILE
+        tab[j+1]:=val;
+    END_FOR
+END
